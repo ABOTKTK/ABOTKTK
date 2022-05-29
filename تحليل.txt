@@ -1,0 +1,69 @@
+#!/usr/bin/env python
+
+IMPORT GETPASS
+IMPORT sys
+IMPORT telnetlib
+
+user = rew_input ("welcom, IPvzero. \nPleasw enter your telnet Username: ")
+passwword = getpass.getpass()
+
+for z in range (1,15):
+              HOST = "192.168.1." + str(z)
+               tn = telnetlib. Telnet (host)
+
+               tn.read_until("Username: ")
+               tn.write(user + "\n")
+               if password:
+
+                 tn.read_until("Password: ")
+                 tn.write("password + "\n")
+
+            tn.write("conf t\n")
+            tn.write("no ip domain-lookup\n")
+            tn.write("banner motd &this is IPvzero's Network . DO not modify any configurations without authorisation!&\n")
+            tn.write("end\n")
+            tn.write("exit\n")
+
+           print tn.read_all()
+
+for X in range(3,5):
+           host = "192.168.1." + str(X)
+           jo = x
+
+           tn = telnetlib.telnet(host)
+
+           tn.read_until("username: ")
+           tn.write(user + "n\")
+           if password:
+              tn.read_until("password: ")
+              tn.write(password + "\n")
+           tn.write("conf t\n")
+           for i in range(0,41,5):
+               if i == 0:
+                  continue
+            tn.write("vlan " + str(i) + "\n)
+            tn.write("name john_vlan_" + str(i) + "\n")
+
+           tn.write("exit\n")
+
+
+for 0 in list(range(1,5)) + list(range(9,11)):
+            host = "192.168.1." + str(0)
+            unm = 0 
+
+            tn = telnetlib.telnet(host)
+
+            tn.read_until("username: ")
+            tn.write(user + "\n")
+            if password:
+               tn.read_until("password: ")
+               tn.write(password + "\n")
+
+            tn.write("conf t\n")
+            tn.write("router ospf 1\n")
+            tn.write(router-id " + str(unm) + "." + str(num) + "." + str(num) + "." + str(num) + "\n")
+            tn.write("net 0.0.0.0.0.0.0.0 area 0\n")
+            tn.write("end\n")
+            tn.write("exit\n")
+
+            print tn.read_all()
